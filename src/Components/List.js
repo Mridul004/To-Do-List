@@ -1,14 +1,52 @@
-import React, { useState } from 'react'
+import React, { useState  } from 'react'
 import './TodoList.css'
+
+
+
+    
   
+
 
   function List() {
     const [todos, setTodos] = useState([]);
     const [inputValue, setInputValue] = useState('');
-  
+    
+ 
+
+    function DM(){
+      const darkModeSwitch = document.getElementById('darkModeSwitch');
+      const body = document.body;
+      
+      darkModeSwitch.addEventListener('change', function() {
+        if (darkModeSwitch.checked) {
+          body.classList.add('dark-mode');
+        } else {
+          body.classList.remove('dark-mode');
+        }
+      });
+      
+      
+    }
+
+  const handlekeyDown=(event)=>{
+    if(event.key==='Enter')
+    {
+      handleAddTodo();
+    }
+    if(event.key==='Delete')
+    {
+      handleDeleteTodo();
+    }
+  }
     function handleAddTodo() {
-      setTodos([...todos, inputValue]);
-      setInputValue('');
+      if(inputValue.length===0)
+      alert("Task cannot be Empty!")
+      else{
+
+        setTodos([...todos, inputValue]);
+        setInputValue('');
+        localStorage.setItem('todos', JSON.stringify(todos));
+      }
     }
   
     function handleDeleteTodo(index) {
@@ -18,28 +56,48 @@ import './TodoList.css'
     }
   
     
+    // function loadTasksFromLocalStorage() {
+    //   const storedTasks = localStorage.getItem('todos');
+    //   if (storedTasks) {
+    //     return JSON.parse(storedTasks);
+    //   }
+     
+    // }
+
 
   return (
         
-        <>
+        <>  
+            <div className="form-check form-switch form-check-reverse">  
+            <h4 className='Drk'>Dark Mode</h4>   
+            <label className="switch">
+              <input type="checkbox" id="darkModeSwitch" onChange={DM} />
+              <span className="slider round"></span>
+            </label>
+            
+            </div>
+
+          <h1 className="italic-heading">{todos.length} Tasks to go .....</h1>            
+
             <div className="todo-list-container">
-            <div class="input-group flex-nowrap" className='add-todo-container'>
-              <span class="input-group-text" id="addon-wrapping">--></span>
-              <input type="text" className='add-todo-input' class="form-control" value={inputValue} onChange={e=>setInputValue(e.target.value)} aria-describedby="addon-wrapping"/>
-          
-              <button class="btn btn-primary" onClick={handleAddTodo}>Add</button>
-            </div>
-              <ul class='mx-3' className='todo-list' >
-                {todos.map((todo, index) => (
-                  <li class="my-1" key={index} className='todo-item'>
-                    {todo}
-                    <button class="btn btn-danger mx-3" className='delete-todo-button' onClick={() => handleDeleteTodo(index)}>x</button>
-                  </li>
-                ))}
-              </ul>        
+                <div  className='add-todo-container'>
+                  <span className="input-group-text" id="addon-wrapping">Task :</span>
+                  <input type="text" className="form-control" value={inputValue} onKeyDown={handlekeyDown} onChange={e=>setInputValue(e.target.value)} aria-describedby="addon-wrapping"/>
+              
+                  <button className="btn btn-primary" id='myButton' onClick={handleAddTodo}>Add</button>
+                </div>
+                  <ul className='todo-list' >
+                    {todos.map((todo, index) => (
+                      <li key={index} className='todo-item'>{index} ) &nbsp; {todo}
+                        <button className='delete-todo-button' onKeyDown={handlekeyDown} onClick={() => handleDeleteTodo(index)}>Done</button>
+                      </li>
+                    ))}
+                  </ul>        
+                  
                 
-                
             </div>
+            
+            
         </>
   )
 }

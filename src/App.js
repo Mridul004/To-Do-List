@@ -4,13 +4,12 @@ import List from './Components/List';
 
 
 
-
 function App() {
   return (
     <>
     <h1 className='heading'>To Do List App</h1>
-    <List title=""></List>
-  
+    
+    <List title="" ></List>
    
     </>
   );
