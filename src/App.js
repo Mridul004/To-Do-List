@@ -1,15 +1,19 @@
 
 import './App.css';
 import List from './Components/List';
-
-
+import Navbar from './Components/Navbar';
+import { BrowserRouter as Router, } from 'react-router-dom';
 
 function App() {
   return (
     <>
-    <h1 className='heading'>To Do List App</h1>
-    
-    <List title="" ></List>
+    <Router>
+      <Navbar></Navbar>
+    </Router>
+
+    <Router>
+      <List title="" ></List>
+    </Router>
    
     </>
   );

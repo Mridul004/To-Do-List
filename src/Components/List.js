@@ -13,20 +13,7 @@ import './TodoList.css'
     
  
 
-    function DM(){
-      const darkModeSwitch = document.getElementById('darkModeSwitch');
-      const body = document.body;
-      
-      darkModeSwitch.addEventListener('change', function() {
-        if (darkModeSwitch.checked) {
-          body.classList.add('dark-mode');
-        } else {
-          body.classList.remove('dark-mode');
-        }
-      });
-      
-      
-    }
+   
 
   const handlekeyDown=(event)=>{
     if(event.key==='Enter')
@@ -55,27 +42,12 @@ import './TodoList.css'
       setTodos(newTodos);
     }
   
-    
-    // function loadTasksFromLocalStorage() {
-    //   const storedTasks = localStorage.getItem('todos');
-    //   if (storedTasks) {
-    //     return JSON.parse(storedTasks);
-    //   }
-     
-    // }
 
 
   return (
         
         <>  
-            <div className="form-check form-switch form-check-reverse">  
-            <h4 className='Drk'>Dark Mode</h4>   
-            <label className="switch">
-              <input type="checkbox" id="darkModeSwitch" onChange={DM} />
-              <span className="slider round"></span>
-            </label>
             
-            </div>
 
           <h1 className="italic-heading">{todos.length} Tasks to go .....</h1>            
 

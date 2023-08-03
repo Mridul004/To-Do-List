@@ -1,134 +1,143 @@
 .todo-list-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  .add-todo-container {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .add-todo-input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    font-size: 16px;
-    
-  }
-  
-  .add-todo-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .todo-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 400px;
-    
-  }
-  .form-control{
-    box-shadow: 10px 10px 20px rgb(80, 206, 232,1);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
 
-  .italic-heading{
-    font-style: italic;
-    display: flex;
-    justify-content: center;
-  }
+.add-todo-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-todo-input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
   
-  .todo-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    color: blue;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .delete-todo-button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #dc3545;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    
-  }
+.add-todo-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
 
- /* Define styles for the switch */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 400px;
+  
+}
+.form-control{
+  box-shadow: 10px 10px 20px rgb(80, 206, 232,1);
+}
+
+.italic-heading{
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: blue;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.delete-todo-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+margin: 5px;
+border-radius: 20px;
 }
 
-/* Hide the default checkbox */
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+opacity: 0;
+width: 0;
+height: 0;
 }
 
-.Drk{
-  margin-left: 1000px;
-}
+
 
 /* Style the slider */
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-  width: 50px;
-  height: 25px;
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+width: 40px;
+height: 15px;
+border-radius: 20px;
+
 }
 
 /* Customize the appearance of the slider */
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+position: absolute;
+content: "";
+height: 8px;
+width: 8px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+border-radius: 50%;
 }
 
 /* Change the appearance of the slider when it's checked (dark mode) */
 input:checked+.slider {
-  background-color: #2196F3;
-  
+background-color: #2196F3;
+
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
 }
 
 .dark-mode {
-  background-color: #333;
-  color: #fff;
+background-color: black;
+color: #fff;
+}
+
+.login-button{
+  margin-left: 1295px;
+  background-color: grey;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 5px;
 }
