@@ -49,7 +49,7 @@ import './TodoList.css'
         <>  
             
 
-          <h1 className="italic-heading">{todos.length} Tasks to go .....</h1>            
+          <h1 className="italic-heading">{todos.length} Reminders .....</h1>            
 
             <div className="todo-list-container">
                 <div  className='add-todo-container'>
