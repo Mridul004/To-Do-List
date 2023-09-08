@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <span>Todo List App</span>
+        <span>Reminder App</span>
       </div>
       <ul className="navbar__links">
         <li>
